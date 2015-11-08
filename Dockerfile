@@ -9,6 +9,7 @@ RUN yum install -y \
   npm \
   ruby-devel \
   rubygem-bundler \
+  sudo \
   tar \
   which \
   && yum clean all
