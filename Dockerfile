@@ -4,8 +4,8 @@ ENV \
 # Install commands.
 # bash needed by the steps on Wercker CI
 # gcc and libc-dev libffi-dev needed by gem install ffi
-# ruby, ruby-dev, and ruby-io-console needed by gem
 # nproc in coreutils and GNU xargs in findutils needed by UglifyJS
+# ruby, ruby-dev, and ruby-io-console needed by gem
 RUN apk --no-cache --update add \
   bash \
   coreutils \
