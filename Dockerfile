@@ -3,6 +3,7 @@ ENV \
   LC_CTYPE="en_US.utf8"
 # Install commands.
 # bash needed by the steps on Wercker CI
+# convert in imagemagick needed by something
 # gcc and libc-dev libffi-dev needed by gem install ffi
 # nproc in coreutils and GNU xargs in findutils needed by UglifyJS
 # ruby, ruby-dev, and ruby-io-console needed by gem
@@ -13,6 +14,7 @@ RUN apk --no-cache --update add \
   findutils \
   gcc \
   git \
+  imagemagick \
   libc-dev \
   libffi-dev \
   make \
