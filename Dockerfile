@@ -6,6 +6,7 @@ ENV \
 # gcc and libc-dev libffi-dev needed by gem install ffi
 # nproc in coreutils and GNU xargs in findutils needed by UglifyJS
 # ruby, ruby-dev, and ruby-io-console needed by gem
+# ssh in openssh-client needed by git
 RUN apk --no-cache --update add \
   bash \
   coreutils \
@@ -15,6 +16,7 @@ RUN apk --no-cache --update add \
   libc-dev \
   libffi-dev \
   make \
+  openssh-client \
   python \
   python-dev \
   rsync \
