@@ -4,6 +4,7 @@ ENV \
 # Install commands.
 # bash needed by the steps on Wercker CI
 # convert in imagemagick and librsvg needed by something
+# font-jis-misc needed by Japanese
 # gcc and libc-dev libffi-dev needed by gem install ffi
 # nproc in coreutils and GNU xargs in findutils needed by UglifyJS
 # ruby, ruby-dev, and ruby-io-console needed by gem
@@ -12,6 +13,7 @@ RUN apk --no-cache --update add \
   bash \
   coreutils \
   findutils \
+  font-jis-misc \
   gcc \
   git \
   imagemagick \
