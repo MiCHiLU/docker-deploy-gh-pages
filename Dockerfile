@@ -2,6 +2,7 @@ FROM mhart/alpine-node:0.10.48
 ENV \
   LC_CTYPE="en_US.utf8"
 # Install commands.
+# bash needed by the some steps on Wercker CI
 # convert in imagemagick and librsvg needed by something
 # font-jis-misc needed by Japanese
 # gcc and libc-dev libffi-dev needed by gem install ffi
@@ -9,6 +10,7 @@ ENV \
 # ruby, ruby-dev, and ruby-io-console needed by gem
 # ssh in openssh-client needed by git
 RUN apk --no-cache --update add \
+  bash \
   coreutils \
   findutils \
   font-jis-misc \
