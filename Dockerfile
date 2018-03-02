@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:0.10.45
+FROM mhart/alpine-node:0.10.48
 ENV \
   LC_CTYPE="en_US.utf8"
 # Install commands.
@@ -27,6 +27,7 @@ RUN apk --no-cache --update add \
   ruby-dev \
   ruby-io-console \
   sudo \
+  zip \
   ;
 RUN echo 'gem: --no-rdoc --no-ri' > /etc/gemrc \
   && gem install \
