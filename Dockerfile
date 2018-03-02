@@ -30,6 +30,7 @@ RUN apk --no-cache --update add \
   sudo \
   zip \
   ;
+RUN pip install --upgrade setuptools
 RUN echo 'gem: --no-rdoc --no-ri' > /etc/gemrc \
   && gem install \
   bundler \
