@@ -20,6 +20,7 @@ RUN apk --no-cache --update add \
   librsvg \
   make \
   openssh-client \
+  py-pip \
   python \
   python-dev \
   rsync \
