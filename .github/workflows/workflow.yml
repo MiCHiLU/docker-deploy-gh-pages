@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    branch: master
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to GitHub Container Registry
+      run: echo "${PERSONAL_ACCESS_TOKEN}" | docker login ghcr.io --username "${GITHUB_ACTOR}" --password-stdin
+      env:
+        PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+    - name: Build image
+      run: |
+        docker build --tag "ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA:0:7}" .
+    - name: Push image to GitHub Container Registry
+      run: |
+        docker push "ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA:0:7}"
+        if [ "${GITHUB_REF}" = "refs/heads/master" ]; then
+          docker tag "ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA:0:7}" "ghcr.io/${GITHUB_REPOSITORY}:latest"
+          docker psuh "ghcr.io/${GITHUB_REPOSITORY}:latest"
+        fi

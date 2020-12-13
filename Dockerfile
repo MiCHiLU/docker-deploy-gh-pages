@@ -12,6 +12,7 @@ ENV \
 RUN apk --no-cache --update add \
   bash \
   coreutils \
+  curl \
   findutils \
   font-jis-misc \
   gcc \
@@ -32,7 +33,7 @@ RUN apk --no-cache --update add \
   sudo \
   zip \
   ;
-RUN pip install --upgrade setuptools
+RUN pip install --upgrade setuptools==44.1.1
 RUN echo 'gem: --no-rdoc --no-ri' > /etc/gemrc \
   && gem install \
   bundler \
