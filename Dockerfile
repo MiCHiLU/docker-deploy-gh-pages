@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:0.10.48
+FROM mhart/alpine-node:6.17.1
 ENV \
   LC_CTYPE="en_US.utf8"
 # Install commands.
